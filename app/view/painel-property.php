@@ -88,7 +88,7 @@
                     </div>
 
                     <div class="mb-3 col-12">
-                        <label for="property_price" class="form-label">Valor</label>
+                        <label for="property_price" class="form-label">Valor (em reais)</label>
                         <input value="<?= $property["property_price"] ?>" type="text" class="form-control js-mask-money" name="property_price">
                     </div>
 
