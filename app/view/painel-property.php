@@ -193,7 +193,7 @@
 
                     <div class="row">
                         <div class="mb-3 col-12">
-                            <label for="property_address" class="form-label">Nome da rua</label>
+                            <label for="property_address" class="form-label">Endereço</label>
                             <input value="<?= $property["property_address"] ?>" type="text" class="form-control" name="property_address" placeholder="">
                         </div>
 
