@@ -29,7 +29,7 @@
 
                 <div class="row">
 
-                    <div class="mb-3 col-6">
+                    <div class="mb-3 col-12">
 
                         <label for="property_public" class="form-label">Visibilidade do imóvel no site</label>
 
@@ -46,7 +46,7 @@
                         </select>
                     </div>
 
-                    <div class="mb-3 col-6">
+                    <div class="mb-3 col-12">
 
                         <label for="property_fixed" class="form-label">Imóvel fixado</label>
 
@@ -66,7 +66,7 @@
                     </div>
 
 
-                    <div class="mb-3 col-sm-4">
+                    <div class="mb-3 col-sm-12">
                         <label for="property_type_id" class="form-label">Tipo de imóvel</label>
 
                         <select class="form-select" name="property_type_id">
@@ -82,7 +82,7 @@
                         </select>
                     </div>
 
-                    <div class="mb-3 col-sm-4">
+                    <div class="mb-3 col-sm-12">
                         <label for="property_goal_id" class="form-label">Finalidade</label>
 
                         <select class="form-select" name="property_goal_id">
@@ -98,7 +98,7 @@
                         </select>
                     </div>
 
-                    <div class="mb-3 col-sm-4">
+                    <div class="mb-3 col-sm-12">
                         <label for="property_price" class="form-label">Valor (R$)</label>
                         <input type="text" class="form-control money_format" name="property_price">
                     </div>
@@ -106,20 +106,20 @@
                 </div>
 
                 <div class="row">
-                    <div class="col">
-                        <div class="mb-3 col">
+                    <div class="col-12">
+                        <div class="mb-3 col-12">
                             <label for="property_area" class="form-label">Área construída</label>
                             <input type="number" class="form-control" name="property_area">
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="mb-3 col">
+                    <div class="col-12">
+                        <div class="mb-3 col-12">
                             <label for="property_area_total" class="form-label">Área do terreno</label>
                             <input type="number" class="form-control" name="property_area_total">
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="mb-3 col">
+                    <div class="col-12">
+                        <div class="mb-3 col-12">
                             <label for="property_measure" class="form-label">Unidade de medida</label>
                             <select class="form-select" name="property_measure">
                                 <option value="m²">Metro quadrado (m²)</option>
@@ -134,7 +134,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="mb-3 col-xs-6 col-sm-3">
+                    <div class="mb-3 col-12">
                         <label for="property_bedrooms" class="form-label">Quartos</label>
                         <select class="form-select" name="property_bedrooms">
                             <option value="0">Nenhum quarto</option>
@@ -150,7 +150,7 @@
                             <option value="10">10 quartos</option>
                         </select>
                     </div>
-                    <div class="mb-3 col-xs-6 col-sm-3">
+                    <div class="mb-3 col-12">
                         <label for="property_bathrooms" class="form-label">Banheiros</label>
                         <select class="form-select" name="property_bathrooms">
                             <option value="0">Nenhum banheiro</option>
@@ -166,7 +166,7 @@
                             <option value="10">10 banheiros</option>
                         </select>
                     </div>
-                    <div class="mb-3 col-xs-6 col-sm-3">
+                    <div class="mb-3 col-12">
                         <label for="property_suites" class="form-label">Suítes</label>
                         <select class="form-select" name="property_suites">
                             <option value="0">Nenhuma suíte</option>
@@ -182,7 +182,7 @@
                             <option value="10">10 suítes</option>
                         </select>
                     </div>
-                    <div class="mb-3 col-xs-6 col-sm-3">
+                    <div class="mb-3 col-12">
                         <label for="property_parking_spaces" class="form-label">Vagas de garagem</label>
                         <select class="form-select" name="property_parking_spaces">
                             <option value="0">Nenhuma vaga de garagem</option>
@@ -202,12 +202,12 @@
 
                 <div class="row">
 
-                    <div class="mb-3 col-sm-4">
+                    <div class="mb-3 col-12">
                         <label for="property_address" class="form-label">Endereço</label>
                         <input type="text" class="form-control" name="property_address" placeholder="">
                     </div>
 
-                    <div class="mb-3 col-sm-4">
+                    <div class="mb-3 col-12">
 
                         <label for="neighborhood_id" class="form-label">Bairro</label>
 
@@ -243,7 +243,7 @@
 
                     </div>
 
-                    <div class="mb-3 col-sm-4">
+                    <div class="mb-3 col-12">
                         <label for="city_id" class="form-label">Cidade</label>
                         <input type="text" class="form-control city_show bg-light" disabled name="city_show" placeholder="">
                         <select class="form-select city" style="display: none" name="city_id">
@@ -256,14 +256,14 @@
                 </div>
 
                 <div class="row">
-                    <div class="mb-3 col">
+                    <div class="mb-3 col-12">
                         <label for="property_description" class="form-label">Descrição</label>
                         <textarea rows="4" class="form-control" name="property_description"></textarea>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="mb-3 col">
+                    <div class="mb-3 col-12">
                         <label for="property_description" class="form-label">Proximidades (separe por vírgula)</label>
                         <input placeholder="Ex: Padaria, Supermercado, Escola" type="text" class="form-control" name="property_nearby" />
                     </div>
@@ -284,7 +284,7 @@
 
 
                     <div id="modelo" style="display: none">
-                        <div class="py-2 prev col-xs-12 col-sm-3">
+                        <div class="py-2 prev col-12">
                             <div class="">
                                 <label class="clickable">
                                     <img class="image-preview fixed-image bordered" src="src/img/white.png"></img>
