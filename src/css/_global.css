@@ -1,0 +1,139 @@
+body{
+    background-color: #ebeff3;
+    overflow-y: scroll;
+}
+
+.card{
+    border-radius: 0 !important;
+    border: none  !important;
+}
+
+
+a:focus {
+    border-color: inherit !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+    border: none !important;
+  }
+
+
+
+.card, .card-footer, .card-header{
+    border-radius: 0 !important;
+}
+
+
+a{
+    text-decoration: none !important;
+}
+
+
+.accordion-button, .accordion-button:active, .accordion-button:focus, .accordion-button:hover{
+    background-color: rgb(247, 247, 247) !important;
+    color: black !important;
+    border-color: inherit;
+    border: none;
+    border-radius: 0px !important;
+}
+
+tr{
+    vertical-align: middle!important;
+}
+
+
+.accordion-item{
+    border-radius: 0px !important;
+
+}
+.btn{
+    padding: 12px;
+    border-radius: 0;
+}
+
+.nav-link, .nav-link:hover, .nav-link:active, .nav-link:focus{
+    border: none;
+}
+
+.form-control, .form-select{
+    padding: 13px;
+    border: solid 1px rgb(236, 236, 236);
+    border-radius: 0;
+}
+
+.form-control:hover, .form-control:active, .form-control:focus, *:focus{
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: solid 1px rgb(219, 219, 219);
+}
+
+.bg-light{
+    background-color: white !important;
+}
+
+.iconify{
+    margin-top: -7px;
+}
+
+.content-web{
+    margin-top: 72px;
+}
+
+.btn-light:hover, .btn-light:active{
+    background-color: #f0f0f0;
+    border-color: #f0f0f0;
+}
+
+@media (max-width: 576px) { 
+    
+    /*body{
+        background-color: white !important;
+    }
+
+    .content-fluid{
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        padding-top: 0px !important;
+    }
+
+    .card{
+        margin: 0px !important;
+    }
+    
+    .shadow-sm{
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+
+    .b-mobile{
+        border-bottom: solid 1px rgb(224, 224, 224);
+    }*/
+
+    .center-only-mobile{
+        text-align: center !important;
+    }
+
+
+ }
+
+ @media(min-width: 577px){
+     
+    .fixed-bar-1, .fixed-bar-2{
+        position: fixed;
+    }
+
+    .fixed-bar-2{
+        right: 0;
+    }
+    
+ }
+
+ label{
+    font-weight: 500;
+ }
+ 
+
+ .clickable{
+    cursor: pointer;
+ }

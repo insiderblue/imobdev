@@ -1,0 +1,45 @@
+.image-preview{
+    object-fit: cover;
+    height: 250px;
+    width: 100%;
+
+}
+
+.image-preview:not(.fixed-image){
+    filter: saturate(0%);
+}
+
+.bordered{
+    border: dashed 1px rgb(163, 163, 163) !important;
+}
+
+
+@media (min-width: 576px) { 
+    
+    .image-preview{
+        height: 150px;
+        width: 15.5vw;
+    }
+    
+}
+
+@media (min-width: 768px) { 
+
+    .image-preview{
+        height: 250px;
+        width: 15.5vw;
+    }
+     
+
+ }
+
+@media (min-width: 992px) { 
+    
+
+ }
+
+@media (min-width: 1200px) { 
+
+ }
+
+

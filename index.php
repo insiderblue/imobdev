@@ -1,0 +1,1 @@
+<?php include("config.php"); include("utils/functions.php"); include("app/controller/_web.php"); ?>
