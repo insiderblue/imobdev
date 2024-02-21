@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    // Mask
+    $('.js-mask-money').mask('000.000.000.000.000,00', {reverse: true}).prepend("R$ ");
 
     $(".action-logout").click(function () {
         $.post("app/controller/logout.php", function () {

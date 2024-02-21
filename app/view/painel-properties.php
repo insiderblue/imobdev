@@ -99,8 +99,8 @@
                     </div>
 
                     <div class="mb-3 col-sm-12">
-                        <label for="property_price" class="form-label">Valor (R$)</label>
-                        <input type="text" class="form-control money_format" name="property_price">
+                        <label for="property_price" class="form-label">Valor</label>
+                        <input type="text" class="form-control js-mask-money" name="property_price">
                     </div>
 
                 </div>
