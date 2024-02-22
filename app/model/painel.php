@@ -636,3 +636,47 @@ if (isset($_GET["neighborhood_id"])) {
         }
     }
 }
+
+/**
+ * DEV MODE
+ */
+
+
+ // Random properties
+
+ if(isset($_GET["confirm"]) && isset($_GET["dev-random-properties"])) : 
+
+    $prices = ["100.000,00", "250.000,00", "300.000,00", "350.000,00"];
+    $areas = ["100", "200", "250"];
+
+    for ($i = 0; $i < 5; $i++) :
+
+        $data = array(
+            'property_public' => '1',
+            'property_fixed' => '1',
+            'property_type_id' => $property_types[rand(0,count($property_types))]["property_type_id"],
+            'property_goal_id' => $property_goals[rand(0,count($property_goals))]["property_goal_id"],
+            'property_price' => $prices[rand(0,count($prices))],
+            'property_area_total' => $areas[rand(0,count($areas))],
+            'property_measure' => $areas[rand(0,count($areas))],
+            'property_bedrooms' => rand(0,4),
+            'property_bathrooms' => rand(0,4),
+            'property_suites' => rand(0,2),
+            'property_parking_spaces' => rand(0,3),
+            'property_address' => "Nome da rua",
+            'neighborhood_id' => $neighborhoods_cities[rand(0,count($neighborhoods_cities))]["neighborhood_id"],
+            'city_id' => $neighborhoods_cities[rand(0,count($neighborhoods_cities))]["city_id"],
+            'property_description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet mi ac nisl semper, at pellentesque risus facilisis. Suspendisse lobortis libero in erat hendrerit, at mollis felis euismod. Quisque a magna placerat, ornare dolor ut, vehicula turpis. Cras aliquam sapien quis ligula molestie, ac dapibus diam commodo. Nulla non pharetra leo. Aenean vulputate vel tellus efficitur viverra. Phasellus faucibus euismod elit sit amet tristique.<br/><br/>Praesent ut cursus sapien. Vestibulum ultrices gravida diam, ac tempus nunc viverra id. Mauris et ullamcorper magna. Phasellus nunc odio, condimentum quis ante a, porttitor volutpat nulla. Nunc eu metus congue, bibendum libero sed, semper mi. Sed vel lorem in turpis aliquam bibendum. Sed quis faucibus lectus. In id velit eu eros dignissim malesuada nec ut risus.',
+            'property_nearby' => ''
+        );
+        $url = 'https://insider.blue/imobdev/';
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_POST, true);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+        $response = curl_exec($curl);
+        curl_close($curl);
+
+    endfor; 
+    
+ endif; 
