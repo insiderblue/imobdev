@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="card-body p-0">
-                        <a class="btn btn-light w-100 text-start" href="./?dev-random_properties"><span class="iconify" data-icon="fe:random"></span> Cadastrar imóveis aleatórios</a>
+                        <a class="btn btn-light w-100 text-start" href="./?dev-random-properties"><span class="iconify" data-icon="fe:random"></span> Cadastrar imóveis aleatórios</a>
                     </div>
                 </div>
 
