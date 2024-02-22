@@ -16,7 +16,7 @@
                 </div>
             </div>
 
-            <?php if(isset($_GET["dev-mode"])) : ?>
+            <?php if(isset($_SESSION["dev-mode"])) : ?>
 
                 <div class="card shadow-lg mt-3">
                     <div class="card-header bg-dark text-white" style="font-size: 19px; font-weight: 600">

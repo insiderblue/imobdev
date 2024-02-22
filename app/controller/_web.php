@@ -1,5 +1,10 @@
 <?php 
 
+// Dev mode
+if(isset($_GET["dev-mode"])) {
+    $_SESSION["dev-mode"] = true;
+}
+
 // Controle de rotas
 if(!@$_SESSION["user_authenticated"]){
     $page = "login";
