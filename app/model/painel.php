@@ -653,7 +653,7 @@ if (isset($_GET["neighborhood_id"])) {
 
         $new_property = $pdo->prepare('
             INSERT INTO properties (
-                :property_public,
+                    property_public,
                     property_fixed,
                     property_type_id,
                     property_goal_id,
