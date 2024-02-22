@@ -718,3 +718,18 @@ if (isset($_GET["neighborhood_id"])) {
     endfor; 
     
  endif; 
+
+  // Delete properties
+
+  if(isset($_GET["confirm"]) && isset($_GET["dev-delete-properties"])) :
+
+    $delete_property = $pdo->prepare('UPDATE properties SET property_deleted = :property_deleted WHERE real_estate_id = :real_estate_id');
+
+    if ($delete_property->execute(
+        array(
+            'real_estate_id'            => $_SESSION["real_estate_id"],
+            'property_deleted'          => 1
+        )
+    ));
+
+  endif; 

@@ -1,3 +1,5 @@
+<?php if(!isset($_SESSION["dev-mode"])) : exit; endif; ?>
+
 <?php if(isset($_GET["confirm"])) : ?>
 
 <div class="card shadow-lg mt-4">
