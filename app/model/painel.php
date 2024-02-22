@@ -652,7 +652,7 @@ if (isset($_GET["neighborhood_id"])) {
     for ($i = 0; $i < 5; $i++) :
 
         $data = array(
-            'new_property' = 1,
+            'new_property' => 1,
             'property_public' => 1,
             'property_fixed' => 1,
             'property_type_id' => $property_types[rand(0,count($property_types))]["property_type_id"],
