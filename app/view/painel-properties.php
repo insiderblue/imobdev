@@ -21,8 +21,9 @@
 
         <div class="card text-white bg-secondary shadow-lg mt-4">
 
-            <div class="card-header toggle_content" content="new_property" style="font-size: 19px; font-weight: 600; cursor: pointer">
-                <span class="iconify" data-icon="fa6-solid:house-chimney-medical"></span> Cadastrar imóvel
+            <div class="card-header toggle_content d-flex" content="new_property" style="font-size: 19px; font-weight: 600; cursor: pointer">
+                <div><span class="iconify" data-icon="fa6-solid:house-chimney-medical"></span> Cadastrar imóvel</div>
+                <div><iconify-icon icon="clarity:eye-hide-line"  style="color: white"></iconify-icon> Ocultar campos opcionais</div>
             </div>
 
             <div class="card-body bg-white text-dark new_property p-4" style="display: none">
