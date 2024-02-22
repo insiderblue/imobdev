@@ -407,6 +407,7 @@ if (isset($_REQUEST["fixed_properties"])) {
     b.city_title as property_city,
     c.neighborhood_title as property_neighborhood,
     d.property_type_title,
+    d.property_type_title_gender,
     e.property_goal_title
     FROM properties a
     INNER JOIN cities b ON a.city_id = b.city_id
