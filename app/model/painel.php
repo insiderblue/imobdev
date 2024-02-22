@@ -653,8 +653,8 @@ if (isset($_GET["neighborhood_id"])) {
 
         $data = array(
             'new_property' = 1
-            'property_public' => '1',
-            'property_fixed' => '1',
+            'property_public' => 1,
+            'property_fixed' => 1,
             'property_type_id' => $property_types[rand(0,count($property_types))]["property_type_id"],
             'property_goal_id' => $property_goals[rand(0,count($property_goals))]["property_goal_id"],
             'property_price' => $prices[rand(0,count($prices))],
