@@ -275,7 +275,7 @@
                         <input type="hidden" name="property_pics" id="property_pics" class="property_pics" value="<?= count($files) - 2 ?>" />
 
                         <div id="none" style="<?= (count($files) <= 2 ? 'display: block' : 'display: none') ?>">
-                            Clique em "Adicionar imagem" para começar a enviar fotos do imóvel
+                            <span class="text-danger">* Ao menos uma foto deve ser adicionada. Clique em "Adicionar imagem".</span>
                         </div>
 
 
