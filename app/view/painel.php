@@ -9,14 +9,21 @@
                 </div>
 
                 <div class="card-body p-0">
-
                     <a class="btn btn-light w-100 text-start" href="./"><span class="iconify" data-icon="bi:house"></span> Imóveis</a>
                     <a class="btn btn-light w-100 text-start" href="./?cities"><span class="iconify" data-icon="icon-park-outline:city"></span> Cidades</a>
                     <a class="btn btn-light w-100 text-start" href="./?neighborhoods"><span class="iconify" data-icon="bi:pin-map"></span> Bairros</a>
                     <a target="_blank" class="btn btn-light w-100 text-start load-site" href="<?= $_SESSION["real_estate_website"] ?>"><span class="iconify" data-icon="bx:link-external"></span> Site</a>
+                </div>
+            </div>
 
+            <div class="card shadow-lg">
+                <div class="card-header bg-dark text-white" style="font-size: 19px; font-weight: 600">
+                    <span class="iconify" data-icon="entypo:lab-flask"></span> Experimentos</a>
                 </div>
 
+                <div class="card-body p-0">
+                    <a class="btn btn-light w-100 text-start" href="./?random_properties"><span class="iconify" data-icon="fe:random"></span> Cadastrar imóveis aleatórios</a>
+                </div>
             </div>
 
 
