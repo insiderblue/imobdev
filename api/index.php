@@ -631,16 +631,21 @@ if (isset($_REQUEST["all_properties"])) {
 if (isset($_REQUEST["get_images"])) {
 
     $dir = '../upload/real_estate_' . $_REQUEST["real_estate_id"] . '/property_' . $_REQUEST["property_id"] . "/";
-    $files = scandir($dir);
 
-    unset($files[0]);
-    unset($files[1]);
-
-    if(count($files) == 0) {
+    if (is_dir($dir)) :
+        $files = scandir($dir);
+        unset($files[0]);
+        unset($files[1]);
+        if(count($files) == 0) : 
+            $files[] = "123.jpg";
+            $files[] = "456.jpg";
+            $files[] = "789.jpg";
+        endif; 
+    else: 
         $files[] = "123.jpg";
         $files[] = "456.jpg";
         $files[] = "789.jpg";
-    }
+    endif; 
 
     echo json_encode($files);
 }
