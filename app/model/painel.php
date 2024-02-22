@@ -677,7 +677,6 @@ if (isset($_GET["neighborhood_id"])) {
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
         $response = curl_exec($curl);
         curl_close($curl);
-        echo $response;
 
     endfor; 
     
