@@ -388,7 +388,9 @@ if (isset($_GET["property_id"])) {
 $property_types = $pdo->prepare('
 SELECT
 a.property_type_id,
-a.property_type_title
+a.property_type_title,
+a.property_type_title_plural,
+a.property_type_title_gender
 FROM property_types a
 WHERE a.real_estate_id = :real_estate_id
 ');
