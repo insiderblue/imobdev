@@ -204,14 +204,14 @@
 
                     <div class="mb-3 col-12">
                         <label for="property_address" class="form-label">Endereço</label>
-                        <input type="text" class="form-control" name="property_address" placeholder="">
+                        <input required type="text" class="form-control" name="property_address" placeholder="">
                     </div>
 
                     <div class="mb-3 col-12">
 
                         <label for="neighborhood_id" class="form-label">Bairro</label>
 
-                        <select class="form-select neighborhood" name="neighborhood_id">
+                        <select required class="form-select neighborhood" name="neighborhood_id">
 
                             <option value="" disabled selected></option>
 
@@ -246,7 +246,7 @@
                     <div class="mb-3 col-12">
                         <label for="city_id" class="form-label">Cidade</label>
                         <input type="text" class="form-control city_show bg-light" disabled name="city_show" placeholder="">
-                        <select class="form-select city" style="display: none" name="city_id">
+                        <select required class="form-select city" style="display: none" name="city_id">
                         </select>
                     </div>
 
