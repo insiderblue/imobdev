@@ -31,6 +31,13 @@
 
                     <div class="mb-3 col-12">
 
+                        <label for="hide_fields">
+                            <input type="checkbox" name="hide_fields" id="hide_fields">
+                            Ocultar campos opcionais
+                        </label>
+                        
+                        <hr>
+
                         <label for="property_public" class="form-label">Visibilidade do imóvel no site <span class="text-danger">*</span></label>
 
                         <select required class="form-select" name="property_public">
