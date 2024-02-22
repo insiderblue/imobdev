@@ -18,7 +18,7 @@
         Esta ação removerá todos os imóveis cadastrados. Não será possível recuperá-los!
     </h5>
     <div class="card-body">
-        <a href="./?dev-random-properties&confirm">Clique aqui</a> para confirmar.
+        <a href="./?dev-delete-properties&confirm">Clique aqui</a> para confirmar.
     </div>
 </div>
 
