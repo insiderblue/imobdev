@@ -21,9 +21,9 @@
 
                     <div class="mb-3 col-12">
 
-                        <label for="property_public" class="form-label">Visibilidade do imóvel no site</label>
+                        <label for="property_public" class="form-label">Visibilidade do imóvel no site <span class="text-danger">*</span></label>
 
-                        <select class="form-select" name="property_public">
+                        <select required class="form-select" name="property_public">
 
                             <option <?= ($property["property_public"] == 1 ? 'selected' : '') ?> value="1">
                                 Imóvel visível
@@ -38,9 +38,9 @@
 
                     <div class="mb-3 col-12">
 
-                        <label for="property_fixed" class="form-label">Imóvel fixado</label>
+                        <label for="property_fixed" class="form-label">Imóvel fixado <span class="text-danger">*</span></label>
 
-                        <select class="form-select" name="property_fixed">
+                        <select required class="form-select" name="property_fixed">
 
 
                             <option <?= ($property["property_fixed"] == 0 ? 'selected' : '') ?> value="0">
@@ -56,9 +56,9 @@
                     </div>
 
                     <div class="mb-3 col-12">
-                        <label for="property_type_id" class="form-label">Tipo de imóvel</label>
+                        <label for="property_type_id" class="form-label">Tipo de imóvel <span class="text-danger">*</span></label>
 
-                        <select class="form-select" name="property_type_id">
+                        <select required class="form-select" name="property_type_id">
                             <?php
 
                             foreach ($property_types as $row) { ?>
@@ -72,9 +72,9 @@
                     </div>
 
                     <div class="mb-3 col-12">
-                        <label for="property_goal_id" class="form-label">Finalidade</label>
+                        <label for="property_goal_id" class="form-label">Finalidade <span class="text-danger">*</span></label>
 
-                        <select class="form-select" name="property_goal_id">
+                        <select required class="form-select" name="property_goal_id">
                             <?php
 
                             foreach ($property_goals as $row) { ?>
@@ -88,7 +88,7 @@
                     </div>
 
                     <div class="mb-3 col-12">
-                        <label for="property_price" class="form-label">Valor (R$)</label>
+                        <label required for="property_price" class="form-label">Valor (R$) <span class="text-danger">*</span></label>
                         <input value="<?= $property["property_price"] ?>" type="text" class="form-control js-mask-money" name="property_price">
                     </div>
 
@@ -101,19 +101,19 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="mb-3 col-12">
-                            <label for="property_area" class="form-label">Área construída</label>
+                            <label for="property_area" class="form-label">Área construída (opcional)</label>
                             <input value="<?= $property["property_area"] ?>" type="number" class="form-control" name="property_area">
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="mb-3 col-12">
-                            <label for="property_area_total" class="form-label">Área do terreno</label>
+                            <label for="property_area_total" class="form-label">Área do terreno (opcional)</label>
                             <input value="<?= $property["property_area_total"] ?>" type="number" class="form-control" name="property_area_total">
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="mb-3 col-12">
-                            <label for="property_measure" class="form-label">Unidade de medida</label>
+                            <label for="property_measure" class="form-label">Unidade de medida (opcional)</label>
                             <select class="form-select" name="property_measure">
                                 <option <?= ($property["property_measure"] == 'm²' ? 'selected' : '') ?> value="m²">Metro quadrado (m²)</option>
                                 <option <?= ($property["property_measure"] == 'a' ? 'selected' : '') ?> value="a">Are (a)</option>
@@ -126,7 +126,7 @@
 
                     <div class="row">
                         <div class="mb-3 col-12">
-                            <label for="property_bedrooms" class="form-label">Quartos</label>
+                            <label for="property_bedrooms" class="form-label">Quartos (opcional)</label>
                             <select class="form-select" name="property_bedrooms">
                                 <option <?= ($property["property_bedrooms"] == 0 ? 'selected' : '') ?> value="0">Nenhum quarto</option>
                                 <option <?= ($property["property_bedrooms"] == 1 ? 'selected' : '') ?> value="1">1 quarto</option>
@@ -142,7 +142,7 @@
                             </select>
                         </div>
                         <div class="mb-3 col-12">
-                            <label for="property_bathrooms" class="form-label">Banheiros</label>
+                            <label for="property_bathrooms" class="form-label">Banheiros (opcional)</label>
                             <select class="form-select" name="property_bathrooms">
                                 <option <?= ($property["property_bathrooms"] == 0 ? 'selected' : '') ?> value="0">Nenhum banheiro</option>
                                 <option <?= ($property["property_bathrooms"] == 1 ? 'selected' : '') ?> value="1">1 banheiro</option>
@@ -158,7 +158,7 @@
                             </select>
                         </div>
                         <div class="mb-3 col-12">
-                            <label for="property_suites" class="form-label">Suítes</label>
+                            <label for="property_suites" class="form-label">Suítes (opcional)</label>
                             <select class="form-select" name="property_suites">
                                 <option <?= ($property["property_suites"] == 0 ? 'selected' : '') ?> value="0">Nenhuma suíte</option>
                                 <option <?= ($property["property_suites"] == 1 ? 'selected' : '') ?> value="1">1 suíte</option>
@@ -174,7 +174,7 @@
                             </select>
                         </div>
                         <div class="mb-3 col-12">
-                            <label for="property_parking_spaces" class="form-label">Vagas de garagem</label>
+                            <label for="property_parking_spaces" class="form-label">Vagas de garagem (opcional)</label>
                             <select class="form-select" name="property_parking_spaces">
                                 <option <?= ($property["property_parking_spaces"] == 0 ? 'selected' : '') ?> value="0">Nenhuma vaga de garagem</option>
                                 <option <?= ($property["property_parking_spaces"] == 1 ? 'selected' : '') ?> value="1">1 vaga de garagem</option>
@@ -240,7 +240,7 @@
 
                         <div class="mb-3 col-12">
                             <label for="city_id" class="form-label">Cidade <span class="text-danger">*</span></label>
-                            <input value="<?= $city_title ?>" type="text" class="form-control city_show bg-light" disabled name="city_show" placeholder="">
+                            <input required value="<?= $city_title ?>" type="text" class="form-control city_show bg-light" disabled name="city_show" placeholder="">
                             <select required class="form-select city" style="display: none" name="city_id">
                                 <option value="<?= $row["city_id"] ?>" selected></option>
                             </select>
@@ -250,14 +250,14 @@
 
                     <div class="row">
                         <div class="mb-3 col-12">
-                            <label for="property_description" class="form-label">Descrição</label>
-                            <textarea rows="4" class="form-control" name="property_description"><?= $property["property_description"] ?></textarea>
+                            <label for="property_description" class="form-label">Descrição <span class="text-danger">*</span></label>
+                            <textarea required rows="4" class="form-control" name="property_description"><?= $property["property_description"] ?></textarea>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="mb-3 col-12">
-                            <label for="property_description" class="form-label">Proximidades (separe por vírgula)</label>
+                            <label for="property_description" class="form-label">Proximidades [separado por vírgula] (opcional)</label>
                             <input placeholder="Ex: Padaria, Supermercado, Escola" type="text" class="form-control" name="property_nearby" value="<?= $property["property_nearby"] ?>" />
                         </div>
                     </div>
