@@ -193,14 +193,14 @@
 
                     <div class="row">
                         <div class="mb-3 col-12">
-                            <label for="property_address" class="form-label">Endereço <span class="text-danger">* Obrigatório</span></label>
+                            <label for="property_address" class="form-label">Endereço <span class="text-danger">*</span></label>
                             <input required value="<?= $property["property_address"] ?>" type="text" class="form-control" name="property_address" placeholder="">
                         </div>
 
 
                         <div class="mb-3 col-12">
 
-                            <label for="neighborhood_id" class="form-label">Bairro <span class="text-danger">* Obrigatório</span></label>
+                            <label for="neighborhood_id" class="form-label">Bairro <span class="text-danger">*</span></label>
 
                             <select required class="form-select neighborhood" name="neighborhood_id">
 
@@ -239,7 +239,7 @@
                         </div>
 
                         <div class="mb-3 col-12">
-                            <label for="city_id" class="form-label">Cidade <span class="text-danger">* Obrigatório</span></label>
+                            <label for="city_id" class="form-label">Cidade <span class="text-danger">*</span></label>
                             <input value="<?= $city_title ?>" type="text" class="form-control city_show bg-light" disabled name="city_show" placeholder="">
                             <select required class="form-select city" style="display: none" name="city_id">
                                 <option value="<?= $row["city_id"] ?>" selected></option>
