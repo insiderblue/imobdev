@@ -125,7 +125,8 @@ if (isset($_REQUEST["property_types"])) {
     $property_types = $pdo->prepare('
     SELECT
     a.property_type_id,
-    a.property_type_title
+    a.property_type_title,
+    a.property_type_title_plural
     FROM property_types a
     INNER JOIN properties b ON a.property_type_id = b.property_type_id
     WHERE a.real_estate_id = ' . $_REQUEST["real_estate_id"] . '
