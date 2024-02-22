@@ -649,7 +649,7 @@ if (isset($_GET["neighborhood_id"])) {
     $prices = ["100.000,00", "250.000,00", "300.000,00", "350.000,00"];
     $areas = ["100", "200", "250"];
 
-    for ($i = 0; $i < 5; $i++) :
+    for ($i = 0; $i < $_SESSION["real_estate_maximum_properties"]; $i++) :
 
         $new_property = $pdo->prepare('
             INSERT INTO properties (

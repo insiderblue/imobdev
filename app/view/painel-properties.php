@@ -266,7 +266,7 @@
 
                 <div class="row">
                     <div class="mb-3 col-12">
-                        <label for="property_description" class="form-label">Proximidades [separado por vírgula] (opcional)</label>
+                        <label for="property_nearby" class="form-label">Proximidades [separado por vírgula] (opcional)</label>
                         <input placeholder="Ex: Padaria, Supermercado, Escola" type="text" class="form-control" name="property_nearby" />
                     </div>
                 </div>
