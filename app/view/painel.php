@@ -16,7 +16,7 @@
                 </div>
             </div>
 
-            <div class="card shadow-lg">
+            <div class="card shadow-lg mt-3">
                 <div class="card-header bg-dark text-white" style="font-size: 19px; font-weight: 600">
                     <span class="iconify" data-icon="entypo:lab-flask"></span> Experimentos</a>
                 </div>
