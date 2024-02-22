@@ -61,12 +61,7 @@ tr{
     border-radius: 0;
 }
 
-.form-control.invalid, .form-select.invalid{
-    padding: 13px;
-    background: rgb(255, 237, 237);
-    border: solid 1px rgb(224, 103, 103);
-    border-radius: 0;
-}
+
 
 .form-control:hover, .form-control:active, .form-control:focus, *:focus{
     border-color: inherit;
