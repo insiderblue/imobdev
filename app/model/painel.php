@@ -294,7 +294,8 @@ $properties = $pdo->prepare('
     a.real_estate_id,
     a.property_thumb,
     b.property_goal_title,
-    c.property_type_title
+    c.property_type_title,
+    c.property_type_title_gender
     FROM properties a
     INNER JOIN property_goals b ON a.property_goal_id = b.property_goal_id
     INNER JOIN property_types c ON a.property_type_id = c.property_type_id
