@@ -48,9 +48,13 @@
                     $page = "neighborhoods";
                 }
 
+                // dev mode
+
                 if (isset($_GET["dev-random-properties"])) {
                     $page = "dev-random-properties";
                 }
+
+                // fim dev mode
 
                 include("app/view/painel-" . $page . ".php");
             } else {
