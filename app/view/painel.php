@@ -16,15 +16,19 @@
                 </div>
             </div>
 
-            <div class="card shadow-lg mt-3">
-                <div class="card-header bg-dark text-white" style="font-size: 19px; font-weight: 600">
-                    <span class="iconify" data-icon="entypo:lab-flask"></span> Modo desenvolvedor</a>
+            <?php if(isset($_GET["dev-mode"])) : ?>
+
+                <div class="card shadow-lg mt-3">
+                    <div class="card-header bg-dark text-white" style="font-size: 19px; font-weight: 600">
+                        <span class="iconify" data-icon="entypo:lab-flask"></span> Modo desenvolvedor</a>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <a class="btn btn-light w-100 text-start" href="./?dev-random_properties"><span class="iconify" data-icon="fe:random"></span> Cadastrar imóveis aleatórios</a>
+                    </div>
                 </div>
 
-                <div class="card-body p-0">
-                    <a class="btn btn-light w-100 text-start" href="./?dev-random_properties"><span class="iconify" data-icon="fe:random"></span> Cadastrar imóveis aleatórios</a>
-                </div>
-            </div>
+            <?php endif; ?>
 
 
 
