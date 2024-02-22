@@ -3,6 +3,10 @@ RewriteEngine On
 RewriteCond %{QUERY_STRING} !original=1
 RewriteRule ^/?upload/real_estate_(.*)/property_(.*)/(.*).jpg$ /imobdev/image.php?real_estate=$1&property=$2&thumb=$3 [R=301,L]
 
+RewriteCond %{QUERY_STRING} !original=1
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^/?upload/real_estate_(.*)/property_(.*)/(.*).jpg$ https://insider.blue/imobdev/no-picture.jpg [R=301,L]
+
 # php -- BEGIN cPanel-generated handler, do not edit
 # Defina o pacote “ea-php74” como a linguagem padrão de programação “PHP”.
 <IfModule mime_module>
