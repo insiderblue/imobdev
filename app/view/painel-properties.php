@@ -3,7 +3,7 @@
         <div class="card-header">
             Erro ao enviar imagens
         </div>
-        <div class="card-b  ody">
+        <div class="card-body">
             <?php foreach ($error as $key => &$row) {
                 $i = $key + 1;
                 echo $i . " - " . $row . "<BR/>";
