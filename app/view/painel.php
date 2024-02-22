@@ -26,6 +26,10 @@
                     <div class="card-body p-0">
                         <a class="btn btn-light w-100 text-start" href="./?dev-random-properties"><span class="iconify" data-icon="fe:random"></span> Cadastrar imóveis aleatórios</a>
                     </div>
+
+                    <div class="card-body p-0">
+                        <a class="btn btn-light w-100 text-start" href="./?dev-delete-properties"><span class="iconify" data-icon="material-symbols:delete-outline"></span> Deletar todos os imóveis</a>
+                    </div>
                 </div>
 
             <?php endif; ?>
@@ -52,6 +56,10 @@
 
                 if (isset($_GET["dev-random-properties"])) {
                     $page = "dev-random-properties";
+                }
+
+                if (isset($_GET["dev-delete-properties"])) {
+                    $page = "dev-delete-properties";
                 }
 
                 // fim dev mode
