@@ -1,15 +1,9 @@
 <?php 
 
-//header("Content-Type: image/jpeg");
-
-// Image
-$imagem_path = "upload/real_estate_" . $_GET["real_estate"] . '/property_' . $_GET["property"] . '/' . $_GET["thumb"] . '.jpg';
-if (file_exists($imagem_path)) { $imagem_path = "no-picture.jpg"; }
-
-var_dump($imagem_path); exit;
+header("Content-Type: image/jpeg");
 
 // Carrega a imagem original
-$original = imagecreatefromjpeg($imagem_path);
+$original = imagecreatefromjpeg("upload/real_estate_".$_GET["real_estate"].'/property_'.$_GET["property"].'/'.$_GET["thumb"].'.jpg');
 
 // Carrega a marca d'agua
 $watermark = imagecreatefrompng("https://insider.blue/imobdev/watermark/".$_GET["real_estate"].".png");
