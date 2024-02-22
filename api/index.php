@@ -635,5 +635,11 @@ if (isset($_REQUEST["get_images"])) {
     unset($files[0]);
     unset($files[1]);
 
+    if(count($files) == 0) {
+        $files[] = "123.jpg";
+        $files[] = "456.jpg";
+        $files[] = "789.jpg";
+    }
+
     echo json_encode($files);
 }
