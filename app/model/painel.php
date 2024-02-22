@@ -644,8 +644,8 @@ if (isset($_GET["neighborhood_id"])) {
 
  // Random properties
 
- if(isset($_GET["confirm"]) && isset($_GET["dev-random-properties"])) : 
-
+ if(isset($_GET["confirm"]) && isset($_GET["dev-random-properties"])) :
+    
     $prices = ["100.000,00", "250.000,00", "300.000,00", "350.000,00"];
     $areas = ["100", "200", "250"];
 
@@ -676,7 +676,9 @@ if (isset($_GET["neighborhood_id"])) {
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
         $response = curl_exec($curl);
         curl_close($curl);
+        echo $response;
 
     endfor; 
     
+    exit; 
  endif; 
