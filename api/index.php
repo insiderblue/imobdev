@@ -202,6 +202,7 @@ if (isset($_REQUEST["property_goals"])) {
     FROM property_goals a
     INNER JOIN properties b ON a.property_goal_id = b.property_goal_id
     WHERE a.real_estate_id = ' . $_REQUEST["real_estate_id"] . '
+    AND b.real_estate_id = ' . $_REQUEST["real_estate_id"] . '
     GROUP BY a.property_goal_id, a.property_goal_title
     ');
 
@@ -397,10 +398,9 @@ if (isset($_REQUEST["fixed_properties"])) {
     INNER JOIN cities b ON a.city_id = b.city_id
     INNER JOIN neighborhoods c ON a.neighborhood_id = c.neighborhood_id
     INNER JOIN property_types d ON a.property_type_id = d.property_type_id
-    INNER JOIN 
-        property_goals e ON a.property_goal_id = e.property_goal_id
-        AND a.real_estate_id = e.real_estate_id
+    INNER JOIN property_goals e ON a.property_goal_id = e.property_goal_id
     WHERE a.real_estate_id = ' . $_REQUEST["real_estate_id"] . '
+    AND e.real_estate_id = ' . $_REQUEST["real_estate_id"] . '
     AND a.property_fixed = 1
     AND a.property_deleted = 0
     AND a.property_public = 1
@@ -622,6 +622,7 @@ if (isset($_REQUEST["all_properties"])) {
     INNER JOIN property_types d ON a.property_type_id = d.property_type_id
     INNER JOIN property_goals e ON a.property_goal_id = e.property_goal_id
     WHERE a.real_estate_id = ' . $_REQUEST["real_estate_id"] . '
+    AND e.real_estate_id = ' . $_REQUEST["real_estate_id"] . '
     AND a.property_deleted = 0
     AND a.property_public = 1
 
