@@ -1,7 +1,7 @@
 <?php
 
 /** Clear the cache */
-function askToClearCache() {
+function askToClearCache($pdo) {
     $getWebsite = $pdo->prepare('SELECT real_estate_website FROM real_estates WHERE real_estate_id = :real_estate_id');
     $getWebsite->bindParam(':real_estate_id', $_SESSION["real_estate_id"]);
     $getWebsite->execute();
