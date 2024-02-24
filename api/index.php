@@ -108,7 +108,7 @@ if (isset($_REQUEST["form_submission"])) {
 
     $real_estate = $real_estate->fetchAll(PDO::FETCH_ASSOC);
 
-    if($real_estate[0]->real_estate_clear_cache == 1) : 
+    if($real_estate[0]['real_estate_clear_cache'] == 1) : 
         $cache_clear = $pdo->prepare('UPDATE real_estates SET real_estate_clear_cache = :real_estate_clear_cache WHERE real_estate_id = :real_estate_id');
         $cache_clear->execute(
             array(
