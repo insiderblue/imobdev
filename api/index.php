@@ -210,7 +210,7 @@ if (isset($_REQUEST["property_goals"])) {
     a.property_goal_title,
     a.property_goal_title_secondary,
     a.property_goal_title_tertiary,
-    a.property_goal_title_quaternary,
+    a.property_goal_title_quaternary
     FROM property_goals a
     INNER JOIN properties b ON a.property_goal_id = b.property_goal_id
     WHERE a.real_estate_id = ' . $_REQUEST["real_estate_id"] . '
