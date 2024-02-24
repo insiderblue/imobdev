@@ -116,7 +116,7 @@ if (isset($_REQUEST["form_submission"])) {
                 'real_estate_id'            => $_REQUEST["real_estate_id"]
             )
         );
-    endif
+    endif;
 
     echo json_encode($real_estate);
 }
