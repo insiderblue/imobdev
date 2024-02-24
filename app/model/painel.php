@@ -1,5 +1,7 @@
 <?php
 
+include("cache_clear.php");
+
 /** New property */
 
 if ($_POST["new_property"] == true) {
@@ -143,7 +145,6 @@ if ($_POST["new_property"] == true) {
         $remove_property->execute();
     }
 
-    include("cache_clear.php");
     
 }
 
