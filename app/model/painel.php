@@ -151,6 +151,8 @@ if ($_POST["new_property"] == true) {
     if ($error) {
         $remove_property = $pdo->prepare("DELETE FROM properties WHERE property_id = $property_id");
         $remove_property->execute();
+    } else {
+        askToClearCache($pdo);
     }
 
     
