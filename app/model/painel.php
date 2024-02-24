@@ -1,13 +1,14 @@
 <?php
 
-
-$cache_clear = $pdo->prepare('UPDATE real_estates SET real_estate_clear_cache = :real_estate_clear_cache WHERE real_estate_id = :real_estate_id');
-$cache_clear->execute(
-    array(
-        'real_estate_clear_cache'   => 1,
-        'real_estate_id'            => $_SESSION["real_estate_id"]
-    )
-);
+function askToClearCache($pdo) {
+    $cache_clear = $pdo->prepare('UPDATE real_estates SET real_estate_clear_cache = :real_estate_clear_cache WHERE real_estate_id = :real_estate_id');
+    $cache_clear->execute(
+        array(
+            'real_estate_clear_cache'   => 1,
+            'real_estate_id'            => $_SESSION["real_estate_id"]
+        )
+    );
+}
 
 /** New property */
 
