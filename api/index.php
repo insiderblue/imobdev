@@ -154,6 +154,8 @@ if (isset($_REQUEST["property_types"])) {
     SELECT
         a.property_type_id,
         a.property_type_title,
+        a.property_type_title_plural,
+        a.property_type_title_gender
         COUNT(b.property_id) AS total_imoveis
     FROM 
         property_types a
