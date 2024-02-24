@@ -149,6 +149,12 @@ if (isset($_REQUEST["real_estate_info"])) {
 
 if (isset($_REQUEST["property_types"])) {
 
+    $property_goal_id = '';
+
+    if(isset($_REQUEST["property_goal_id"])) :
+        $property_goal_id = 'AND b.property_goal_id = '.$_REQUEST["property_goal_id"];
+    endif;
+
     $property_types = $pdo->prepare('
     SELECT
     a.property_type_id,
@@ -160,8 +166,8 @@ if (isset($_REQUEST["property_types"])) {
         a.property_type_id = b.property_type_id
         AND b.property_public = 1
         AND b.property_deleted = 0
-        AND a.real_estate_id = ' . $_REQUEST["real_estate_id"] . '   
-        '.isset($_REQUEST["property_goal_id"]) ? 'AND b.property_goal_id = ' . $_REQUEST["property_goal_id"] : ''.' 
+        AND a.real_estate_id = ' . $_REQUEST["real_estate_id"] . ' 
+        '.$property_goal_id.' 
     GROUP BY a.property_type_id, a.property_type_title
     ');
 
