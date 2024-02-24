@@ -636,8 +636,6 @@ if (isset($_REQUEST["all_properties"])) {
 
     ';
 
-    echo $query;
-    exit;
 
     $all_properties = $pdo->prepare($query);
 
