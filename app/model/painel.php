@@ -286,7 +286,7 @@ if ($_POST["edit_property"] == true) {
             $i++;
         }
 
-
+        askToClearCache($pdo);
         // Ok
 
     }
@@ -746,6 +746,6 @@ if (isset($_GET["neighborhood_id"])) {
         )
     ));
 
-    
+    askToClearCache($pdo);
 
   endif; 
