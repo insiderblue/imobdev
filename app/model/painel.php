@@ -309,7 +309,9 @@ $properties = $pdo->prepare('
     c.property_type_title,
     c.property_type_title_gender
     FROM properties a
-    INNER JOIN property_goals b ON a.property_goal_id = b.property_goal_id
+    INNER JOIN property_goals b ON 
+        a.property_goal_id = b.property_goal_id
+        AND a.real_estate_id = b.real_estate_id
     INNER JOIN property_types c ON a.property_type_id = c.property_type_id
     WHERE a.real_estate_id = :real_estate_id
     AND property_deleted = :property_deleted
