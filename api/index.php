@@ -150,18 +150,23 @@ if (isset($_REQUEST["real_estate_info"])) {
 if (isset($_REQUEST["property_types"])) {
 
     $property_types = $pdo->prepare('
+    
     SELECT
-    a.property_type_id,
-    a.property_type_title,
-    a.property_type_title_plural,
-    a.property_type_title_gender
-    FROM property_types a
-    INNER JOIN properties b ON 
-        a.property_type_id = b.property_type_id
-        AND b.property_public = 1
-        AND b.property_deleted = 0
-    WHERE a.real_estate_id = ' . $_REQUEST["real_estate_id"] . '    
-    GROUP BY a.property_type_id, a.property_type_title
+        a.property_type_id,
+        a.property_type_title,
+        COUNT(b.property_id) AS total_imoveis
+    FROM 
+        property_types a
+    LEFT JOIN 
+        properties b ON a.property_type_id = b.property_type_id 
+                    AND b.property_public = 1 
+                    AND b.property_deleted = 0
+                    AND b.real_estate_id = ' . $_REQUEST["real_estate_id"] . '
+    WHERE 
+        a.real_estate_id = ' . $_REQUEST["real_estate_id"] . '
+    GROUP BY 
+        a.property_type_id,
+        a.property_type_title;
 
     ');
 
