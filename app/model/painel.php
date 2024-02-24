@@ -1,6 +1,6 @@
 <?php
 
-include("cache_clear.php");
+include("app/model/cache_clear.php");
 
 /** New property */
 
