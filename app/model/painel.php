@@ -731,6 +731,8 @@ if (isset($_GET["neighborhood_id"])) {
             )
         ));
 
+        sleep(1);
+
     endfor; 
     
  endif; 
