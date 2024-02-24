@@ -160,7 +160,8 @@ if (isset($_REQUEST["property_types"])) {
         a.property_type_id = b.property_type_id
         AND b.property_public = 1
         AND b.property_deleted = 0
-        AND a.real_estate_id = ' . $_REQUEST["real_estate_id"] . '    
+        AND a.real_estate_id = ' . $_REQUEST["real_estate_id"] . '   
+        '.isset($_REQUEST["property_goal_id"]) ? 'AND b.property_goal_id = ' . $_REQUEST["property_goal_id"] : ''.' 
     GROUP BY a.property_type_id, a.property_type_title
     ');
 
