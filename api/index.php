@@ -92,7 +92,25 @@ if (isset($_REQUEST["form_submission"])) {
 
 }
 
+/**
+ * Check cache clear 
+ */
 
+ if (isset($_REQUEST["clear_cache"])) {
+
+    $real_estate = $pdo->prepare('
+    SELECT
+    real_estate_clear_cache
+    FROM real_estates a
+    WHERE a.real_estate_id = ' . $_REQUEST["real_estate_id"] . '
+    ');
+
+    $real_estate->execute();
+
+    $real_estate = $real_estate->fetchAll(PDO::FETCH_ASSOC);
+
+    echo json_encode($real_estate);
+}
 
 /**
  * Real estate info
