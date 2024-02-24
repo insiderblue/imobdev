@@ -143,6 +143,7 @@ if ($_POST["new_property"] == true) {
         $remove_property->execute();
     }
 
+    include("app/model/cache_clear.php");
     
 }
 
@@ -485,6 +486,7 @@ $cities = $cities->fetchAll();
 
 if ($_POST["new_city"] == true) {
 
+
     $new_city = $pdo->prepare('
 
     INSERT INTO cities (
@@ -526,9 +528,7 @@ if ($_POST["new_city"] == true) {
 
 if (isset($_GET["city_id"])) {
 
-
     if (isset($_GET["delete"])) {
-
 
         $delete_city = $pdo->prepare('UPDATE cities SET city_deleted = :city_deleted WHERE city_id = :city_id AND real_estate_id = :real_estate_id');
 
@@ -734,5 +734,7 @@ if (isset($_GET["neighborhood_id"])) {
             'property_deleted'          => 1
         )
     ));
+
+    
 
   endif; 
