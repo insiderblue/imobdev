@@ -207,7 +207,8 @@ if (isset($_REQUEST["property_goals"])) {
     $property_goals = $pdo->prepare('
     SELECT
     a.property_goal_id,
-    a.property_goal_title
+    a.property_goal_title,
+    a.property_goal_title_secondary
     FROM property_goals a
     INNER JOIN properties b ON a.property_goal_id = b.property_goal_id
     WHERE a.real_estate_id = ' . $_REQUEST["real_estate_id"] . '
@@ -228,7 +229,8 @@ if (isset($_REQUEST["property_goals_not_exclude"])) {
     $property_goals = $pdo->prepare('
     SELECT
     a.property_goal_id,
-    a.property_goal_title
+    a.property_goal_title,
+    a.property_goal_title_secondary
     FROM property_goals a
     WHERE a.real_estate_id = ' . $_REQUEST["real_estate_id"] . '
     ');
