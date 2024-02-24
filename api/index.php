@@ -156,7 +156,7 @@ if (isset($_REQUEST["property_types"])) {
         a.property_type_title,
         a.property_type_title_plural,
         a.property_type_title_gender
-        COUNT(b.property_id) AS total_imoveis
+        COUNT(b.property_id) AS count_properties
     FROM 
         property_types a
     LEFT JOIN 
@@ -168,7 +168,10 @@ if (isset($_REQUEST["property_types"])) {
         a.real_estate_id = ' . $_REQUEST["real_estate_id"] . '
     GROUP BY 
         a.property_type_id,
-        a.property_type_title;
+        a.property_type_title,
+        a.property_type_title_plural,
+        a.property_type_title_gender
+        COUNT(b.property_id) AS count_properties
 
     ');
 
