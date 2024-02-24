@@ -143,7 +143,7 @@ if ($_POST["new_property"] == true) {
         $remove_property->execute();
     }
 
-    include("app/model/cache_clear.php");
+    include("cache_clear.php");
     
 }
 
