@@ -1,13 +1,16 @@
 <?php
 
-function askToClearCache($pdo) {
-    $cache_clear = $pdo->prepare('UPDATE real_estates SET real_estate_clear_cache = :real_estate_clear_cache WHERE real_estate_id = :real_estate_id');
-    $cache_clear->execute(
-        array(
-            'real_estate_clear_cache'   => 1,
-            'real_estate_id'            => $_SESSION["real_estate_id"]
-        )
-    );
+/** Clear the cache */
+function askToClearCache() {
+    $getWebsite = $pdo->prepare('SELECT real_estate_website FROM real_estates WHERE real_estate_id = :real_estate_id');
+    $getWebsite->bindParam(':real_estate_id', $_SESSION["real_estate_id"]);
+    $getWebsite->execute();
+    $website = $getWebsite->fetchColumn();
+    $url = $website.'?update_cache&token=lSBG7ymoEAj1m05lu9FVSzDuxy2ve72dY77KoUWesgsbZXgjuJOlrODMPXPbir8X';
+    $curl = curl_init($url);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    $response = curl_exec($curl);
+    curl_close($curl);
 }
 
 /** New property */
