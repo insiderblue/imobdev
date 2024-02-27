@@ -31,7 +31,7 @@ if (isset($_REQUEST["form_submission"])) {
 
     $form_submission_content = "";
 
-    foreach ($_REQUEST["field"] as $key => &$field) {
+    foreach (@$_REQUEST["field"] as $key => &$field) {
         $form_submission_content .= "<b>$key:</b><br/>$field<br/><br/>";
     }
 
