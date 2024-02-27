@@ -78,13 +78,22 @@ if (isset($_REQUEST["form_submission"])) {
         $mail->Body    = $form_submission_content;
 
         if (!$mail->send()) {
-            echo json_encode('Erro: ' . $mail->ErrorInfo);
+            echo json_encode([
+                "success" => false,
+                "message" => $mail->ErrorInfo
+            ]);
         } else {
-            echo json_encode('E-mail enviado com sucesso!');
+            echo json_encode([
+                "success" => true,
+                "message" => "E-mail enviado com sucesso!"
+            ]);
         }
 
     } else {
-        echo json_encode('Erro desconhecido.');
+        echo json_encode([
+            "success" => false,
+            "message" => "Erro desconhecido."
+        ]);
     }
 
     exit;
