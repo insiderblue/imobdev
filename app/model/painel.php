@@ -20,6 +20,7 @@ function askToClearCache($pdo) {
  $real_estate_logo = $pdo->prepare('
  SELECT
  a.real_estate_logo
+ FROM real_estates
  WHERE a.real_estate_id = :real_estate_id
  ');
  
@@ -29,9 +30,7 @@ function askToClearCache($pdo) {
      )
  );
  
- $real_estate_logo = $real_estate_logo->fetch();
-
- var_dump($real_estate_logo);exit;
+ $real_estate_logo = $real_estate_logo->fetch()->real_estate_logo;
  
 /** New property */
 
