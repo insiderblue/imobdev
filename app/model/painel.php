@@ -13,6 +13,24 @@ function askToClearCache($pdo) {
     curl_close($curl);
 }
 
+/**
+ * Get the logo
+ */
+
+ $property_types = $pdo->prepare('
+ SELECT
+ a.real_estate_logo
+ WHERE a.real_estate_id = :real_estate_id
+ ');
+ 
+ $real_estate_logo->execute(
+     array(
+         'real_estate_id' => $_SESSION["real_estate_id"]
+     )
+ );
+ 
+ $real_estate_logo = $real_estate_logo->fetch();
+ 
 /** New property */
 
 if ($_POST["new_property"] == true) {

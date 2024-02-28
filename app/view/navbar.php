@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg b-mobile fixed-top">
     <div class="container-fluid py-2">
-        <a href="./" class="text-dark" style="font-size: 23px; font-weight: 600">IMOBDEV</a>
+        <a href="./" class="text-dark" style="font-size: 23px; font-weight: 600">
+        
+            
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
