@@ -17,7 +17,7 @@ function askToClearCache($pdo) {
  * Get the logo
  */
 
- $property_types = $pdo->prepare('
+ $real_estate_logo = $pdo->prepare('
  SELECT
  a.real_estate_logo
  WHERE a.real_estate_id = :real_estate_id
