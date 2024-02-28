@@ -31,8 +31,6 @@ function askToClearCache($pdo) {
  );
  
  $real_estate_logo = $real_estate_logo->fetch()["real_estate_logo"];
-
- var_dump( $real_estate_logo);exit;
  
 /** New property */
 
