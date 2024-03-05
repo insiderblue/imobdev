@@ -11,13 +11,16 @@ if (!$original) {
     exit; // Saia do script após exibir a imagem
 }
 
-// Cria uma nova imagem com as dimensões desejadas (900x400) e a preenche com a cor branca
+// Cria uma nova imagem com as dimensões desejadas (900x400)
 $new_width = 900;
 $new_height = 400;
 $new_image = imagecreatetruecolor($new_width, $new_height);
-imagefill($new_image, 0, 0, imagecolorallocate($new_image, 255, 255, 255));
 
-// Calcula as novas dimensões da imagem original mantendo a proporção
+// Preenche a nova imagem com a cor branca
+$white = imagecolorallocate($new_image, 255, 255, 255);
+imagefill($new_image, 0, 0, $white);
+
+// Calcula as dimensões da imagem original mantendo a proporção
 $original_width = imagesx($original);
 $original_height = imagesy($original);
 $aspect_ratio = $original_width / $original_height;
