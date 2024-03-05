@@ -16,9 +16,10 @@ $new_width = 900;
 $new_height = 400;
 $new_image = imagecreatetruecolor($new_width, $new_height);
 
-// Preenche a nova imagem com a cor branca
-$white = imagecolorallocate($new_image, 255, 255, 255);
-imagefill($new_image, 0, 0, $white);
+// Define a cor de fundo para a nova imagem como transparente
+$background_color = imagecolorallocatealpha($new_image, 255, 255, 255, 127);
+imagefill($new_image, 0, 0, $background_color);
+imagesavealpha($new_image, true);
 
 // Calcula as dimensões da imagem original mantendo a proporção
 $original_width = imagesx($original);
