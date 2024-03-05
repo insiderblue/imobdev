@@ -11,57 +11,68 @@ if (!$original) {
     exit; // Saia do script após exibir a imagem
 }
 
-// Cria uma nova imagem com as dimensões desejadas (900x400)
-$new_width = 900;
-$new_height = 400;
-$new_image = imagecreatetruecolor($new_width, $new_height);
-
-// Define a cor de fundo para a nova imagem como transparente
-$background_color = imagecolorallocatealpha($new_image, 255, 255, 255, 127);
-imagefill($new_image, 0, 0, $background_color);
-imagesavealpha($new_image, true);
-
-// Calcula as proporções da imagem original e da área de exibição
-$original_aspect_ratio = imagesx($original) / imagesy($original);
-$target_aspect_ratio = $new_width / $new_height;
-
-// Calcula as dimensões da imagem que será copiada para a área de exibição
-if ($original_aspect_ratio >= $target_aspect_ratio) {
-    // A imagem original é mais larga ou tem a mesma proporção que a área de exibição
-    $resized_width = $new_width;
-    $resized_height = $new_width / $original_aspect_ratio;
-} else {
-    // A imagem original é mais alta que a área de exibição
-    $resized_height = $new_height;
-    $resized_width = $new_height * $original_aspect_ratio;
-}
-
-// Calcula as coordenadas para centralizar a parte da imagem que será copiada
-$offset_x = ($new_width - $resized_width) / 2;
-$offset_y = ($new_height - $resized_height) / 2;
-
-// Redimensiona e copia a parte relevante da imagem original para a nova imagem
-imagecopyresampled($new_image, $original, $offset_x, $offset_y, 0, 0, $resized_width, $resized_height, imagesx($original), imagesy($original));
-
 // Carrega a marca d'água
 $watermark = imagecreatefrompng("https://insider.blue/imobdev/watermark/".$_GET["real_estate"].".png");
 
-// Define a largura fixa da marca d'água para 200px
-$watermark_width = 200;
+// Define a largura e a altura desejadas para a imagem final
+$desired_width = 900;
+$desired_height = 400;
 
-// Obtém a altura da marca d'água mantendo a proporção
-$watermark_height = imagesy($watermark) * ($watermark_width / imagesx($watermark));
+// Obtém as dimensões da imagem original
+$original_width = imagesx($original);
+$original_height = imagesy($original);
 
-// Calcula as coordenadas para posicionar a marca d'água no centro
-$pos_x = ($new_width - $watermark_width) / 2;
-$pos_y = ($new_height - $watermark_height) / 2;
+// Calcula as proporções da imagem original
+$original_aspect_ratio = $original_width / $original_height;
+$desired_aspect_ratio = $desired_width / $desired_height;
+
+// Define as coordenadas e as dimensões da parte da imagem a ser copiada
+$src_x = 0;
+$src_y = 0;
+$src_width = $original_width;
+$src_height = $original_height;
+
+// Se a imagem original não for proporcional à imagem desejada
+if ($original_aspect_ratio != $desired_aspect_ratio) {
+    if ($original_aspect_ratio > $desired_aspect_ratio) {
+        // A imagem original é mais larga, então ajustamos a largura e recalculamos a altura
+        $src_width = $original_height * $desired_aspect_ratio;
+        $src_x = ($original_width - $src_width) / 2;
+    } else {
+        // A imagem original é mais alta, então ajustamos a altura e recalculamos a largura
+        $src_height = $original_width / $desired_aspect_ratio;
+        $src_y = ($original_height - $src_height) / 2;
+    }
+}
+
+// Cria uma nova imagem com as dimensões desejadas
+$new_image = imagecreatetruecolor($desired_width, $desired_height);
+
+// Copia e redimensiona a parte relevante da imagem original para a nova imagem
+imagecopyresampled($new_image, $original, 0, 0, $src_x, $src_y, $desired_width, $desired_height, $src_width, $src_height);
+
+// Define a largura desejada da marca d'água
+$watermark_width = 300;
+
+// Calcula a proporção da largura da marca d'água em relação à largura original
+$scale = $watermark_width / imagesx($watermark);
+
+// Calcula a nova altura da marca d'água mantendo a proporção
+$watermark_height = imagesy($watermark) * $scale;
+
+// Redimensiona a marca d'água para a largura desejada e altura proporcional
+$watermark_resized = imagescale($watermark, $watermark_width, $watermark_height);
+
+// Calcula a posição da marca d'água no centro da nova imagem
+$pos_x = ($desired_width - $watermark_width) / 2;
+$pos_y = ($desired_height - $watermark_height) / 2;
 
 // Adiciona a marca d'água à nova imagem
-imagecopyresampled($new_image, $watermark, $pos_x, $pos_y, 0, 0, $watermark_width, $watermark_height, imagesx($watermark), imagesy($watermark));
+imagecopy($new_image, $watermark_resized, $pos_x, $pos_y, 0, 0, $watermark_width, $watermark_height);
 
 // Exibe a nova imagem com marca d'água
 imagejpeg($new_image);
 imagedestroy($original);
-imagedestroy($watermark);
+imagedestroy($watermark_resized);
 imagedestroy($new_image);
 ?>
