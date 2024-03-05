@@ -14,24 +14,32 @@ if (!$original) {
 // Carrega a marca d'água
 $watermark = imagecreatefrompng("https://insider.blue/imobdev/watermark/".$_GET["real_estate"].".png");
 
+// Define a largura desejada da marca d'água
+$desired_width = 300;
+
+// Calcula a proporção da largura da marca d'água em relação à largura original
+$scale = $desired_width / imagesx($watermark);
+
+// Calcula a nova altura da marca d'água mantendo a proporção
+$desired_height = imagesy($watermark) * $scale;
+
+// Redimensiona a marca d'água para a largura desejada e altura proporcional
+$watermark_resized = imagescale($watermark, $desired_width, $desired_height);
+
 // Obtém as dimensões da imagem original
 $original_width = imagesx($original);
 $original_height = imagesy($original);
 
-// Obtém as dimensões da marca d'água
-$watermark_width = imagesx($watermark);
-$watermark_height = imagesy($watermark);
-
 // Calcula a posição da marca d'água no centro da imagem original
-$pos_x = ($original_width - $watermark_width) / 2;
-$pos_y = ($original_height - $watermark_height) / 2;
+$pos_x = ($original_width - $desired_width) / 2;
+$pos_y = ($original_height - $desired_height) / 2;
 
 // Adiciona a marca d'água à imagem original
-imagecopy($original, $watermark, $pos_x, $pos_y, 0, 0, $watermark_width, $watermark_height);
+imagecopy($original, $watermark_resized, $pos_x, $pos_y, 0, 0, $desired_width, $desired_height);
 
 // Exibe a imagem com marca d'água
 imagejpeg($original);
 imagedestroy($original);
-imagedestroy($watermark);
+imagedestroy($watermark_resized);
 
 ?>
