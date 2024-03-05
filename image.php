@@ -32,8 +32,8 @@ if ($original_aspect_ratio >= $target_aspect_ratio) {
     $resized_height = $new_width / $original_aspect_ratio;
 } else {
     // A imagem original é mais alta que a área de exibição
-    $resized_width = $new_height * $original_aspect_ratio;
     $resized_height = $new_height;
+    $resized_width = $new_height * $original_aspect_ratio;
 }
 
 // Calcula as coordenadas para centralizar a parte da imagem que será copiada
