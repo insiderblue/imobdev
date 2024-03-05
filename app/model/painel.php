@@ -14,23 +14,29 @@ function askToClearCache($pdo) {
 }
 
 /**
- * Get the logo
+ * Get some informations
  */
 
- $real_estate_logo = $pdo->prepare('
+ $informations = $pdo->prepare('
  SELECT
- a.real_estate_logo
+ a.real_estate_name,
+ a.real_estate_logo,
+ a.real_estate_favicon
  FROM real_estates a
  WHERE a.real_estate_id = :real_estate_id
  ');
  
- $real_estate_logo->execute(
+ $informations->execute(
      array(
          'real_estate_id' => $_SESSION["real_estate_id"]
      )
  );
+
+ $someInformations = $informations->fetch();
  
- $real_estate_logo = $real_estate_logo->fetch()["real_estate_logo"];
+ $real_estate_name = $someInformations["real_estate_name"];
+ $real_estate_logo = $someInformations["real_estate_logo"];
+ $real_estate_favicon = $someInformations["real_estate_favicon"];
  
 /** New property */
 
