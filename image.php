@@ -15,8 +15,8 @@ if (!$original) {
 $watermark = imagecreatefrompng("https://insider.blue/imobdev/watermark/".$_GET["real_estate"].".png");
 
 // Define a largura e a altura desejadas para a imagem final
-$desired_width = 900;
-$desired_height = 400;
+$desired_width = 1920;
+$desired_height = 1080;
 
 // Obtém as dimensões da imagem original
 $original_width = imagesx($original);
