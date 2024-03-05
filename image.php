@@ -21,28 +21,27 @@ $background_color = imagecolorallocatealpha($new_image, 255, 255, 255, 127);
 imagefill($new_image, 0, 0, $background_color);
 imagesavealpha($new_image, true);
 
-// Calcula as dimensões da imagem original mantendo a proporção
-$original_width = imagesx($original);
-$original_height = imagesy($original);
-$aspect_ratio = $original_width / $original_height;
-$new_aspect_ratio = $new_width / $new_height;
+// Calcula as proporções da imagem original e da área de exibição
+$original_aspect_ratio = imagesx($original) / imagesy($original);
+$target_aspect_ratio = $new_width / $new_height;
 
-if ($aspect_ratio > $new_aspect_ratio) {
-    // A imagem original é mais larga, então ajustamos a largura e recalculamos a altura
+// Calcula as dimensões da imagem que será copiada para a área de exibição
+if ($original_aspect_ratio >= $target_aspect_ratio) {
+    // A imagem original é mais larga ou tem a mesma proporção que a área de exibição
     $resized_width = $new_width;
-    $resized_height = $new_width / $aspect_ratio;
+    $resized_height = $new_width / $original_aspect_ratio;
 } else {
-    // A imagem original é mais alta ou tem proporção igual, então ajustamos a altura e recalculamos a largura
+    // A imagem original é mais alta que a área de exibição
+    $resized_width = $new_height * $original_aspect_ratio;
     $resized_height = $new_height;
-    $resized_width = $new_height * $aspect_ratio;
 }
 
-// Calcula as coordenadas para centralizar a imagem redimensionada
+// Calcula as coordenadas para centralizar a parte da imagem que será copiada
 $offset_x = ($new_width - $resized_width) / 2;
 $offset_y = ($new_height - $resized_height) / 2;
 
-// Redimensiona a imagem original e a coloca na nova imagem
-imagecopyresampled($new_image, $original, $offset_x, $offset_y, 0, 0, $resized_width, $resized_height, $original_width, $original_height);
+// Redimensiona e copia a parte relevante da imagem original para a nova imagem
+imagecopyresampled($new_image, $original, $offset_x, $offset_y, 0, 0, $resized_width, $resized_height, imagesx($original), imagesy($original));
 
 // Carrega a marca d'água
 $watermark = imagecreatefrompng("https://insider.blue/imobdev/watermark/".$_GET["real_estate"].".png");
