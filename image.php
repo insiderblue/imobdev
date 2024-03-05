@@ -52,7 +52,7 @@ $new_image = imagecreatetruecolor($desired_width, $desired_height);
 imagecopyresampled($new_image, $original, 0, 0, $src_x, $src_y, $desired_width, $desired_height, $src_width, $src_height);
 
 // Define a largura desejada da marca d'água
-$watermark_width = 300;
+$watermark_width = 500;
 
 // Calcula a proporção da largura da marca d'água em relação à largura original
 $scale = $watermark_width / imagesx($watermark);
